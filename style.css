@@ -268,7 +268,7 @@ input:focus {
     margin-bottom: 1.5rem;
 }
 
-#email {
+#email-span {
     font-weight: var(--fw-bold);
 }
 
