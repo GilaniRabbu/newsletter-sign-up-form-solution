@@ -1,4 +1,4 @@
-const InputEmail = document.getElementById("email-input");
+const InputEmail = document.getElementById("email");
 const SubmitButton = document.querySelector(".submit-btn");
 
 const ErrorMsg = document.getElementById("error-message");
@@ -7,7 +7,7 @@ const EmailValidColor = document.querySelector(".email");
 const SignupContainer = document.querySelector(".newsletter-container");
 const SuccessContainer = document.querySelector(".success-msg-container");
 
-const SpanEmailValue = document.getElementById("email");
+const SpanEmailValue = document.getElementById("email-span");
 const DismissButton = document.querySelector(".dismiss-btn");
 
 InputEmail.addEventListener("input", validEmail);
