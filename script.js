@@ -19,7 +19,6 @@ function validEmail(e) {
 
 function handleSubmit() {
     const email = InputEmail.value;
-
     if (!emailRegex(email)) {
         ErrorMsg.classList.remove("hide-error-message");
         EmailValidColor.classList.add("ErrorEmail");

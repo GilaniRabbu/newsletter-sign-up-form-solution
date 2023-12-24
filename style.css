@@ -21,6 +21,8 @@
 
 * {
     margin: 0;
+    padding: 0;
+    font: inherit;
 }
 
 html,
@@ -83,9 +85,9 @@ body {
     background-color: var(--clr-neutral-800);
     color: var(--clr-neutral-900);
     font-size: 1rem;
+    margin: 0.5rem;
     display: grid;
-    place-content: center;
-    margin: 1rem;
+    place-items: center;
 }
 
 .newsletter {
@@ -96,7 +98,7 @@ body {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     align-items: center;
-    max-width: 370px;
+    max-width: 350px;
     overflow: hidden;
     background-color: var(--clr-neutral-100);
 }
@@ -113,7 +115,6 @@ body {
 }
 
 .newsletter-title {
-    margin-top: 0.5rem;
     font-size: 2.5rem;
 }
 
@@ -128,9 +129,15 @@ body {
     margin-top: 0.6rem;
 }
 
-.newsletter-desc,
+.newsletter-desc {
+    font-size: 0.9rem;
+}
+
 .newsletter-text {
     font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* ============================== */
@@ -177,7 +184,7 @@ input:focus {
 }
 
 #error-message {
-    margin-left: 4rem;
+    margin-left: 0.5rem;
     font-size: 0.8rem;
     font-weight: bold;
     color: var(--clr-primary);
@@ -212,12 +219,12 @@ input:focus {
 
 /* ============================== */
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
     .newsletter {
         --content-padding: 1.5rem;
 
         border-radius: 2rem;
-        max-width: 700px;
+        max-width: 800px;
         grid-template-columns: 1fr 1fr;
         padding: var(--content-padding);
     }
@@ -230,9 +237,16 @@ input:focus {
         order: 2;
     }
 
-    .newsletter-desc,
+    .newsletter-desc {
+        font-size: 0.85rem;
+    }
+
     .newsletter-text {
-        font-size: 0.753rem;
+        font-size: 0.785rem;
+    }
+
+    #error-message {
+        margin-left: 5rem;
     }
 }
 
@@ -243,9 +257,9 @@ input:focus {
 /* ============================== */
 
 .success-msg {
-    max-width: 400px;
-    padding: 3rem;
-    border-radius: 2rem;
+    max-width: 350px;
+    padding: 2rem;
+    border-radius: 1rem;
     color: var(--clr-neutral-900);
     background-color: var(--clr-neutral-100);
 }
@@ -286,6 +300,16 @@ input:focus {
 
 .dismiss-btn:is(:hover, :focus) {
     background: linear-gradient(to right, var(--clr-primary-100), var(--clr-primary));
+}
+
+@media (max-width: 475px) {
+    .success-msg {
+        max-width: 300px;
+    }
+
+    .success-title {
+        font-size: 2rem;
+    }
 }
 
 /* ============================== */
