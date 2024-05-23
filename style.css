@@ -98,7 +98,7 @@ body {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     align-items: center;
-    max-width: 350px;
+    max-width: 328px;
     overflow: hidden;
     background-color: var(--clr-neutral-100);
 }
@@ -116,6 +116,7 @@ body {
 
 .newsletter-title {
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .newsletter-item {
@@ -184,7 +185,7 @@ input:focus {
 }
 
 #error-message {
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
     font-size: 0.8rem;
     font-weight: bold;
     color: var(--clr-primary);
@@ -243,10 +244,6 @@ input:focus {
 
     .newsletter-text {
         font-size: 0.785rem;
-    }
-
-    #error-message {
-        margin-left: 5rem;
     }
 }
 
