@@ -1,43 +1,37 @@
-const InputEmail = document.getElementById("email");
-const SubmitButton = document.querySelector(".submit-btn");
+const mailInput = document.querySelector("input"), mailRegExp = /^([a-zA-z0-9._%+-]+)@([a-zA-z0-9.-]+)\.([a-zA-z]{2,})$/;
 
-const ErrorMsg = document.getElementById("error-message");
-const EmailValidColor = document.querySelector(".email");
+let isLiveMailVerifierInitialized = false;
 
-const SignupContainer = document.querySelector(".newsletter-container");
-const SuccessContainer = document.querySelector(".success-msg-container");
+function initializeLiveMailVerifier() {
+  mailInput.addEventListener("keyup", (e) => {
+    const userInput = e.target.value;
 
-const SpanEmailValue = document.getElementById("email-span");
-const DismissButton = document.querySelector(".dismiss-btn");
-
-InputEmail.addEventListener("input", validEmail);
-SubmitButton.addEventListener("click", handleSubmit);
-
-function validEmail(e) {
-    return emailRegex(e.target.value);
-}
-
-function handleSubmit() {
-    const email = InputEmail.value;
-    if (!emailRegex(email)) {
-        ErrorMsg.classList.remove("hide-error-message");
-        EmailValidColor.classList.add("ErrorEmail");
+    if (mailRegExp.test(userInput)) {
+      e.target.classList.remove("form__mail--invalid");
     } else {
-        ErrorMsg.classList.add("hide-error-message");
-        EmailValidColor.classList.remove("ErrorEmail");
-        SignupContainer.classList.add("hidden");
-        SuccessContainer.classList.add("show");
+      e.target.classList.add("form__mail--invalid");
     }
-    SpanEmailValue.innerHTML = email;
+  });
 }
 
-// Required Email Address @
-function emailRegex(email) {
-    const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return emailPattern.test(email);
-}
+const formElement = document.querySelector("form"), formSection = document.querySelector(".main__form");
 
-// Reset The Page
-DismissButton.addEventListener("click", () => {
-    window.location.reload();
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (isLiveMailVerifierInitialized === false) {
+    initializeLiveMailVerifier();
+    isLiveMailVerifierInitialized = true;
+  }
+
+  if (mailRegExp.test(mailInput.value)) {
+    mailInput.value = "";
+    formSection.classList.add("main__form--success");
+  } else {
+    mailInput.classList.add("form__mail--invalid");
+  }
+});
+
+document.querySelector(".success-state__dismiss-btn").addEventListener("click", () => {
+  formSection.classList.remove("main__form--success");
 });

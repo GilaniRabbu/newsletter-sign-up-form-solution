@@ -2,68 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Newsletter Sign-up Form Solution by GilaniRabbu for FrontendMentor.io" />
+  <meta name="keywords" content="Frontend Mentor, Newsletter Sign-up Form Challenge, GilaniRabbu" />
+  <meta property="og:title" content="Newsletter Sign-up Form - Frontend Mentor" />
+  <meta property="og:description" content="Newsletter Sign-up Form Solution by GilaniRabbu for FrontendMentor.io" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
   <title>Frontend Mentor | Newsletter Sign-up Form</title>
 </head>
 
 <body>
   <main>
-    <!-- Newsletter Section -->
-    <div class="newsletter-container">
-      <article class="newsletter">
-        <div class="newsletter-info">
-          <h1 class="newsletter-title">Stay updated!</h1>
-          <p class="newsletter-desc">
-            Join 60,000+ product managers receiving monthly updates on:
-          </p>
-          <div class="newsletter-item">
-            <div class="flex-group">
-              <img src="assets/img/icon-list.svg" alt="list icon">
-              <p class="newsletter-text">Product discovery and building what matters</p>
-            </div>
-            <div class="flex-group">
-              <img src="assets/img/icon-list.svg" alt="list icon">
-              <p class="newsletter-text">Measuring to ensure updates are a success</p>
-            </div>
-            <div class="flex-group">
-              <img src="assets/img/icon-list.svg" alt="list icon">
-              <p class="newsletter-text">And much more!</p>
-            </div>
-          </div>
-          <div class="input-container">
-            <label for="email">Email address</label>
-            <label id="error-message" class="hide-error-message">Valid email required</label>
-            <input type="email" name="email" class="email" id="email" placeholder="email@company.com" required>
-            <button type="submit" class="submit-btn">Subscribe to monthly newsletter</button>
-          </div>
-        </div>
-        <picture class="newsletter-img">
-          <source srcset="assets/img/illustration-sign-up-desktop.svg" media="(min-width: 768px)">
-          <img src="assets/img/illustration-sign-up-mobile.svg" alt="Sign up">
-        </picture>
-      </article>
-    </div>
-    <!-- Newsletter Section -->
+    <h1 class="main__sr-only">
+      Newsletter Sign-up
+    </h1>
 
-    <!-- Success Message -->
-    <div class="success-msg-container">
-      <div class="success-msg">
-        <img src="assets/img/icon-success.svg" class="success-img" alt="icon success">
-        <h2 class="success-title">Thanks for subscribing!</h2>
-        <p class="success-description">
-          A confirmation email has been sent to <span id="email-span">ash@loremcompany.com</span>.
-          Please open it and click the button inside to confirm your subscription.
-        </p>
-        <button class="dismiss-btn">Dismiss message</button>
+    <section class="main__form">
+      <picture class="main__picture-header">
+        <source media="(min-width: 56.25em)" srcset="./assets/img/illustration-sign-up-desktop.svg" />
+        <img src="./assets/img/illustration-sign-up-mobile.svg" alt="" class="main__header-image" width="375"
+          height="451" />
+      </picture>
+      <div class="form__content-wrapper">
+        <h2 class="form__heading">Stay updated!</h2>
+        <p class="form__description">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="form__list">
+          <li class="list__items">Product discovery and building what matters</li>
+          <li class="list__items">Measuring to ensure updates are a success</li>
+          <li class="list__items">And much more!</li>
+        </ul>
+        <form class="main__form-section" novalidate>
+          <label for="email">Email address</label>
+          <input type="email" name="email" id="email" class="form__email" placeholder="email@company.com"
+            autocomplete="off" />
+          <div id="error-message-container" aria-live="polite" class="form__error-message-container">
+            <span class="error-message" id="error-message">Valid email required</span>
+          </div>
+          <button type="submit" class="submit" id="submit" aria-label="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
       </div>
-    </div>
-    <!-- Success Message -->
+    </section>
+
+    <section class="main__success-state">
+      <h2 class="success-state__heading">Thanks for subscribing!</h2>
+      <p class="success-state__description">
+        A confirmation email has been sent to <strong>ash@loremcompany.com</strong>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button class="success-state__dismiss-btn">Dismiss message</button>
+    </section>
   </main>
+
+  <footer>
+    Challenge by
+    <a href="https://www.frontendmentor.io/" target="_blank" class="footer__link"
+      aria-describedby="Frontend Mentor Website">Frontend Mentor</a>, Coded by
+    <a href="https://github.com/GilaniRabbu" target="_blank" class="footer__link" rel="noopener noreferrer"
+      aria-describedby="GilaniRabbu's Github profile">GilaniRabbu</a>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 
