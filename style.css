@@ -210,15 +210,6 @@ button,
   line-height: 1.5rem;
 }
 
-.list__items::before {
-  content: "";
-  background: url(./assets/img/icon-list.svg) no-repeat;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: inline-block;
-  margin-right: 0.9rem;
-}
-
 .main__form-section {
   position: relative;
 }
@@ -367,6 +358,15 @@ button:is(:focus-visible, :hover) {
 
   .main__header-image {
     border-radius: 1rem;
+  }
+
+  .list__items::before {
+    content: "";
+    background: url(./assets/img/icon-list.svg) no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-right: 0.9rem;
   }
 
   .main__success-state {
