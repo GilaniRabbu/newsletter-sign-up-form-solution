@@ -158,6 +158,7 @@ a {
 
 main {
   background: var(--clr-secondary-100);
+  margin: 1rem;
 }
 
 body {
